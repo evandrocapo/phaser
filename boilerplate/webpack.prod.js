@@ -8,20 +8,18 @@ module.exports = merge(common, {
   devtool: false,
   performance: {
     maxEntrypointSize: 90000,
-    maxAssetSize: 900000
+    maxAssetSize: 900000,
   },
   optimization: {
     minimizer: [
       new TerserPlugin({
         terserOptions: {
           output: {
-            comments: false
-          }
-        }
-      })
-    ]
+            comments: false,
+          },
+        },
+      }),
+    ],
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-  ]
-})
+  plugins: [new CleanWebpackPlugin()],
+});
